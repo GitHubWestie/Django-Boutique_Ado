@@ -14,7 +14,7 @@ def add_to_bag(request, item_id):
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
 
-    # Gets the bag variable if it already exists or creates it if it doesnt
+    # Gets the bag session variable if it already exists or creates it if it doesnt
     bag = request.session.get('bag', {})
 
     # Updates the item quantity or adds item if not already in bag
@@ -25,5 +25,5 @@ def add_to_bag(request, item_id):
 
     # Updates bag variable with current data
     request.session['bag'] = bag
-    print(request.session['bag'])
+    
     return redirect(redirect_url)
