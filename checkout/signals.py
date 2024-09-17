@@ -5,7 +5,7 @@ from django.dispatch import receiver
 from .models import OrderLineItem
 
 @receiver(post_save, sender=OrderLineItem)
-def updateOnSave(sender, instance, created, **kwargs):
+def update_on_save(sender, instance, created, **kwargs):
     # Sender = The model sending an object (In this case OrderLineItem)
     # Instance = The actual instance/object sent from the model
     # Created = Boolean value which states if order is new or existing
@@ -15,7 +15,7 @@ def updateOnSave(sender, instance, created, **kwargs):
 
 
 @receiver(post_delete, sender=OrderLineItem)
-def updateOnSave(sender, instance, **kwargs):
+def update_on_delete(sender, instance, **kwargs):
     # Sender = The model sending an object (In this case OrderLineItem)
     # Instance = The actual instance/object sent from the model
     # **kwargs = Any keyword arguments
