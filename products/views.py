@@ -74,7 +74,7 @@ def product_detail(request, product_id):
 
 
 @login_required
-def add_product(request):
+def add_products(request):
     """ Add a product to the store """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that!')
