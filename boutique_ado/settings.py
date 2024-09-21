@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 
-ALLOWED_HOSTS = [os.environ.get('LOCAL_HOST'), 'code-institute-boutique-ado-b560336590fc.herokuapp.com']
+ALLOWED_HOSTS = [os.environ.get('LOCAL_HOST'), os.environ.get('HEROKU_HOST')]
 
 
 # Application definition
